@@ -1,0 +1,9 @@
+BOT_IDS=alerts,ops
+API_KEY_IDS=internal,monitoring
+ENABLE_TELEGRAM_PROXY=false
+TELEGRAM_API_BASE=https://api.telegram.org
+TELEGRAM_TIMEOUT_MS=10000
+TELEGRAM_BOT_ALERTS_TOKEN=123456789:replace-with-bot-token
+TELEGRAM_BOT_OPS_TOKEN=987654321:replace-with-bot-token
+API_KEY_INTERNAL=replace-with-strong-random-value
+API_KEY_MONITORING=replace-with-another-strong-random-value

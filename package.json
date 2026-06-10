@@ -1,0 +1,38 @@
+{
+  "name": "telegram-worker-hook",
+  "version": "0.1.0",
+  "description": "Reusable Cloudflare Worker for sending Telegram bot messages with per-bot secrets and API key authentication.",
+  "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "private": false,
+  "scripts": {
+    "preinstall": "node -e \"if (!process.env.npm_execpath?.includes('pnpm')) { console.error('Use pnpm to install dependencies.'); process.exit(1); }\"",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "dry-run": "wrangler deploy --dry-run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "telegram",
+    "cloudflare-worker",
+    "webhook",
+    "bot",
+    "serverless"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260604.0",
+    "@eslint/js": "^9.28.0",
+    "@types/node": "^22.15.29",
+    "@vitest/coverage-v8": "^3.2.2",
+    "eslint": "^9.28.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1",
+    "vitest": "^3.2.2",
+    "wrangler": "^4.19.1"
+  }
+}

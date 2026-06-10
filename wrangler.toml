@@ -1,0 +1,15 @@
+name = "telegram-worker-hook"
+main = "src/index.ts"
+compatibility_date = "2026-06-01"
+workers_dev = true
+
+[vars]
+BOT_IDS = "alerts"
+API_KEY_IDS = "internal"
+ENABLE_TELEGRAM_PROXY = "false"
+TELEGRAM_API_BASE = "https://api.telegram.org"
+TELEGRAM_TIMEOUT_MS = "10000"
+
+# Configure secrets with:
+# wrangler secret put TELEGRAM_BOT_ALERTS_TOKEN
+# wrangler secret put API_KEY_INTERNAL
