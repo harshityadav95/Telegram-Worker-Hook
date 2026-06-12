@@ -10,7 +10,7 @@ Reusable Cloudflare Worker for sending Telegram bot messages from one stable HTT
 - Optional generic Telegram Bot API proxy for advanced bot methods.
 - Supports JSON, `multipart/form-data`, and `application/x-www-form-urlencoded`.
 - Designed for Cloudflare Workers with fast cold starts and minimal dependencies.
-- ARM-based GitHub Actions CI using `ubuntu-24.04-arm`.
+- GitHub Actions validates builds only; deployment is handled directly in Cloudflare.
 
 ## API
 
@@ -90,6 +90,8 @@ The generic proxy is disabled unless `ENABLE_TELEGRAM_PROXY=true`.
 
 ## Configuration
 
+The Cloudflare Worker is named `telegramwebhook` in `wrangler.toml`.
+
 Non-secret Worker variables:
 
 | Name | Example | Description |
@@ -115,7 +117,7 @@ Aliases are case-insensitive in requests, then normalized to uppercase `A-Z`, `0
 ## Development
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 cp .dev.vars.example .dev.vars
 pnpm dev
 ```
@@ -129,6 +131,10 @@ pnpm coverage
 pnpm lint
 pnpm dry-run
 ```
+
+## Deployment
+
+Deploy from Cloudflare directly. The GitHub Actions workflow does not deploy; it only verifies that changes are valid by running install, typecheck, tests, coverage, lint, and Wrangler dry run.
 
 ## Documentation
 
